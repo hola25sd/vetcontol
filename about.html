@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" href="reserva.css">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#70ff82",
+                    "on-surface-variant": "#424752",
+                    "on-secondary": "#ffffff",
+                    "on-surface": "#111c2c",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#dee8ff",
+                    "background": "#f9f9ff",
+                    "secondary": "#006e24",
+                    "inverse-surface": "#263142",
+                    "primary-fixed-dim": "#a9c7ff",
+                    "on-primary": "#ffffff",
+                    "outline": "#727783",
+                    "surface-variant": "#d8e3fa",
+                    "on-tertiary-fixed": "#131e17",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#70ff82",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#c2c6d4",
+                    "on-tertiary-fixed-variant": "#3e4a41",
+                    "tertiary-fixed": "#d9e6da",
+                    "on-tertiary-container": "#d0ddd1",
+                    "on-secondary-fixed": "#002106",
+                    "on-background": "#111c2c",
+                    "surface-dim": "#cfdaf1",
+                    "on-secondary-container": "#007527",
+                    "tertiary-container": "#566259",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#a9c7ff",
+                    "surface-container": "#e7eeff",
+                    "tertiary": "#3f4a42",
+                    "tertiary-fixed-dim": "#bdcabe",
+                    "inverse-on-surface": "#ebf1ff",
+                    "primary": "#00478d",
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#d6e3ff",
+                    "surface-tint": "#005db6",
+                    "surface-container-highest": "#d8e3fa",
+                    "surface": "#f9f9ff",
+                    "secondary-fixed-dim": "#51e169",
+                    "surface-container-low": "#f0f3ff",
+                    "on-secondary-fixed-variant": "#005319",
+                    "on-primary-container": "#c8daff",
+                    "on-primary-fixed": "#001b3d",
+                    "surface-bright": "#f9f9ff",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#00468c",
+                    "primary-container": "#005eb8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "48px",
+                    "sm": "12px",
+                    "container-max": "1280px",
+                    "xl": "80px",
+                    "md": "24px",
+                    "base": "8px",
+                    "xs": "4px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-xl": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.25", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<nav class="w-full top-0 sticky z-50 bg-surface dark:bg-surface-dim border-b border-outline-variant dark:border-outline">
+<div class="flex justify-between items-center h-20 px-md lg:px-xl max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">
+                VetControl
+            </div>
+<div class="hidden md:flex space-x-md">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="../inicio_gatitos_vetcontrol/code.html">Home</a>
+<a class="font-body-md text-body-md text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary dark:border-primary-fixed-dim pb-1" href="../nosotros_vetcontrol/code.html">About Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="../servicios_gatitos_vetcontrol/code.html">Services</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200" href="../contacto_gatitos_vetcontrol/code.html">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-md py-sm rounded-lg font-label-md active:scale-95 transition-transform">
+                Login
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative bg-surface-container-low py-xl overflow-hidden">
+<div class="max-w-container-max mx-auto px-md lg:px-xl grid md:grid-cols-2 gap-xl items-center relative z-10">
+<div class="space-y-md">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-md py-xs rounded-full font-label-sm uppercase tracking-wider">Nuestra Pasión</span>
+<h1 class="font-headline-xl text-headline-xl text-on-surface leading-tight">Elevando el estándar del cuidado veterinario.</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">En VetControl, no solo gestionamos clínicas; cuidamos los latidos que dan vida a su hogar. Nuestra historia es una de innovación, empatía y compromiso inquebrantable con la salud animal.</p>
+</div>
+<div class="relative">
+<div class="aspect-square rounded-xl overflow-hidden shadow-xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
+<img class="w-full h-full object-cover" data-alt="Professional high-quality photo of a friendly female veterinarian smiling and holding a cute ginger kitten in a modern, clean veterinary clinic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACC4jx-8TJ5z0EZLYFuyFDsWL97T8JBZbmyCc2lIBs2As0xnuykDdU5Nwkol6eyLl8jZS4yT106C3hR2oFH3tVm5vVWDVR6imUjhUaXjRblx6otm9g8QSzX6h6_PBvSDQSdB728b6RRPKzw3CpRTty59nHGyhSE8Djys2klZFX9uQOJ9XJki6gWe0odJcqXdvxyVvoVTg_YVxqQQvwjMC4Cp9nIm3XfV_TqgT2umdCXoz_Td9XYOW7Rb1QmU5ryajBSVClhWeFuoc"/>
+</div>
+<div class="absolute -bottom-8 -left-8 glass-card p-md rounded-xl shadow-lg max-w-xs hidden md:block">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary text-headline-md">verified_user</span>
+<p class="font-label-md text-on-surface">Más de 15 años de excelencia clínica certificada.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Decorative Background Shapes -->
+<div class="absolute top-0 right-0 w-1/3 h-full bg-surface-container-high -skew-x-12 transform translate-x-1/2 -z-0"></div>
+</header>
+<!-- Mission, Vision, History (Bento Layout) -->
+<section class="py-xl max-w-container-max mx-auto px-md lg:px-xl">
+<div class="bento-grid">
+<!-- Our History -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm hover:shadow-md transition-shadow">
+<div class="flex flex-col h-full justify-between">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-md">Nuestra Historia</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                            Fundada en 2005 por la Ing. Mirian Vera, VetControl nació de una necesidad crítica: humanizar la tecnología en la medicina veterinaria. Lo que comenzó como un pequeño consultorio local se transformó en un referente nacional de gestión clínica, donde la precisión del dato se une a la calidez del trato humano. Hemos evolucionado con la ciencia, pero mantenemos intacto el asombro por el vínculo entre humanos y animales.
+                        </p>
+</div>
+<div class="mt-lg grid grid-cols-3 gap-md">
+<div class="text-center">
+<span class="block font-headline-md text-primary">250k+</span>
+<span class="font-label-sm text-outline">Pacientes Curados</span>
+</div>
+<div class="text-center">
+<span class="block font-headline-md text-primary">45</span>
+<span class="font-label-sm text-outline">Clínicas Aliadas</span>
+</div>
+<div class="text-center">
+<span class="block font-headline-md text-primary">98%</span>
+<span class="font-label-sm text-outline">Satisfacción</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Mission -->
+<div class="col-span-12 md:col-span-6 lg:col-span-4 bg-primary text-on-primary p-lg rounded-xl flex flex-col justify-center relative overflow-hidden">
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-[120px] opacity-10">favorite</span>
+<h3 class="font-headline-md text-headline-md mb-sm">Misión</h3>
+<p class="font-body-md text-body-md opacity-90">Proporcionar soluciones integrales de salud animal que combinen la innovación tecnológica con un cuidado compasivo y personalizado para cada mascota.</p>
+</div>
+<!-- Vision -->
+<div class="col-span-12 md:col-span-6 lg:col-span-4 bg-secondary-container text-on-secondary-container p-lg rounded-xl flex flex-col justify-center relative overflow-hidden">
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-[120px] opacity-10">visibility</span>
+<h3 class="font-headline-md text-headline-md mb-sm">Visión</h3>
+<p class="font-body-md text-body-md opacity-90">Ser la red veterinaria líder en Latinoamérica, reconocida por su excelencia médica, ética profesional y capacidad de transformar el bienestar animal.</p>
+</div>
+<!-- Values -->
+<div class="col-span-12 lg:col-span-8 bg-surface-container p-lg rounded-xl border border-outline-variant">
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-lg">Nuestros Valores</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+<div class="flex gap-sm">
+<div class="w-10 h-10 rounded-lg bg-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">psychology</span>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface font-bold">Ética Médica</h4>
+<p class="font-label-sm text-on-surface-variant">Priorizamos el bienestar animal sobre cualquier interés comercial.</p>
+</div>
+</div>
+<div class="flex gap-sm">
+<div class="w-10 h-10 rounded-lg bg-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">groups</span>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface font-bold">Colaboración</h4>
+<p class="font-label-sm text-on-surface-variant">Trabajamos como un equipo unido por el amor a la vida.</p>
+</div>
+</div>
+<div class="flex gap-sm">
+<div class="w-10 h-10 rounded-lg bg-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">rocket_launch</span>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface font-bold">Innovación</h4>
+<p class="font-label-sm text-on-surface-variant">Adoptamos las últimas tecnologías para diagnósticos precisos.</p>
+</div>
+</div>
+<div class="flex gap-sm">
+<div class="w-10 h-10 rounded-lg bg-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">volunteer_activism</span>
+</div>
+<div>
+<h4 class="font-label-md text-on-surface font-bold">Empatía</h4>
+<p class="font-label-sm text-on-surface-variant">Entendemos el dolor y la alegría de cada familia multiespecie.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Team Section -->
+<section class="py-xl bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-md lg:px-xl">
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Conozca a nuestros especialistas</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-sm max-w-2xl mx-auto">Un equipo multidisciplinario dedicado al 100% al cuidado y la felicidad de sus compañeros.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Vet 1 -->
+<div class="group">
+<div class="aspect-[3/4] rounded-xl overflow-hidden mb-md shadow-sm group-hover:shadow-lg transition-all">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A professional male veterinarian in his late 40s with a kind expression, wearing clinical scrubs in a soft blue. He is standing in a brightly lit, high-end veterinary laboratory. The lighting is crisp and clean, reflecting a professional medical environment. The color palette consists of primary blues and secondary greens, creating a serene and trustworthy professional portrait." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrowsj9Kp0f_AK1ZmjU1hQSCTCSIAqbhU91CBFNcGyiwVBhROP5y7YcZ29jvB9Wg-ZekM3rhWpJiuKTO8szws5p16AdOHEfbiwKAFaJdmHCvAgwl0ec6iJDZcGlvwNMbbG5pfRozSUlK-JTyPz3nT3WnMUyU9qa7sK59sFxYhCM-F-_A5vKMzhkvrYTzNOMuOaLENDpsbFbkLwP2_k5axYGdG6VzV2PZMBRiLdHIYRlCQA0QMbvBfsI0QP_u6ZtABoPI6NDfk29KU"/>
+</div>
+<h4 class="font-headline-md text-on-surface">Dr. Mateo Arriaga</h4>
+<span class="font-label-sm text-secondary uppercase tracking-widest block mb-sm">Fundador &amp; Director Médico</span>
+<p class="font-label-md text-on-surface-variant">Especialista en cirugía avanzada y medicina preventiva con 20 años de experiencia.</p>
+</div>
+<!-- Vet 2 -->
+<div class="group">
+<div class="aspect-[3/4] rounded-xl overflow-hidden mb-md shadow-sm group-hover:shadow-lg transition-all">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Close-up photo of a small fluffy kitten looking curiously at the camera." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC136jsYG0iVWvVFEdOtcGPWS42uBHsTCG478SxMjyg1pxg4nGsPDHjtCkrkgCiZUuD1QJVDNaGnjkHqaicpL4z1ZKF2z8PGzG_YisAx64G56pnqhS97PldV5H8ka73GdF0lhjfscWeLTNnAukTsGU41B-LQeyMzPu-0umNvwAgVXXWIWqJYOjYrWC_gK3qc3cDsaHyWRvbm4Lg0maEqg3yksi4LSpODGBZpuUzjGq5LZx7hL-mEu13NqR0O6c9I1fy6_iCr_-jomU"/>
+</div>
+<h4 class="font-headline-md text-on-surface">Dra. Elena Ruiz</h4>
+<span class="font-label-sm text-secondary uppercase tracking-widest block mb-sm">Cardiología Felina</span>
+<p class="font-label-md text-on-surface-variant">Apasionada por el bienestar de los gatos, experta en diagnósticos no invasivos.</p>
+</div>
+<!-- Vet 3 -->
+<div class="group">
+<div class="aspect-[3/4] rounded-xl overflow-hidden mb-md shadow-sm group-hover:shadow-lg transition-all">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A young, enthusiastic male veterinarian assistant with short hair, wearing grey scrubs, working in a modern pet grooming and treatment area. He is interacting gently with a small beagle. The environment is clean, minimalist, and illuminated by bright morning light, emphasizing a positive and energetic workplace culture. The styling is high-end and clinical." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKbi-ayoDSwoaxrPSXpVttUcxfOrFfZh8eTkLVX7e6bJ0c87tvuzYH-Ez7jYM4AratlZjGcqCWfoqQN2i4HTGM2lr_KdaAVYAUYP4uU7p05ZZOwwBt5znrBWhNxHfhc0MfSaB0AOcg9OpUM4iSF5izZoQYhqx5fFntizv-wVF3JOcu0ruLPUjErWMLMPDTV8Oz_aSZnILULsxqle0-vnZWcpDkyQ2mmh4deUXLN0l5hrAkzuxqERvpcCFCo_QtLQV4x5JDWG6jeKA"/>
+</div>
+<h4 class="font-headline-md text-on-surface">Dr. Carlos Mendez</h4>
+<span class="font-label-sm text-secondary uppercase tracking-widest block mb-sm">Medicina Interna</span>
+<p class="font-label-md text-on-surface-variant">Dedicado a la resolución de casos complejos y cuidados intensivos veterinarios.</p>
+</div>
+<!-- Vet 4 -->
+<div class="group">
+<div class="aspect-[3/4] rounded-xl overflow-hidden mb-md shadow-sm group-hover:shadow-lg transition-all">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A mature female head veterinarian with a confident smile, wearing a professional uniform in dark grey. She is standing in a sleek, modern hospital hallway with large windows and clean geometric lines. The atmosphere is sophisticated and high-authority, using a palette of white, silver, and deep blue. The lighting is professional and high-key, highlighting her expertise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxEM8Cad2hz3zQJ7h8dudUb2wAUrLUMgB0v0yNepfUtI9RavZoxAF5vBZ2V40yTiNsnTkq0qHHb8Kw6EbJ1GoYk_Kye4qCyqhNXzI_Uk6sFIUBj8Qc9_Q9MTVPiuX5svaOAomHIXdQQFfpQNY6CNmX3IVdmEhPWZkOoLy7BRoBiHGKQSHAWdP-frFda6M1N_n96PdIVfoke8sb1Ylg77d0WsI6nufTLJMNAi6lQOISM9nCubVe3HMxIy4SbRP0wQWkSqVSTUoi00E"/>
+</div>
+<h4 class="font-headline-md text-on-surface">Dra. Sofia Velez</h4>
+<span class="font-label-sm text-secondary uppercase tracking-widest block mb-sm">Dermatología</span>
+<p class="font-label-md text-on-surface-variant">Especialista en alergias y tratamientos regenerativos de la piel animal.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="py-xl">
+<div class="max-w-container-max mx-auto px-md lg:px-xl">
+<div class="bg-surface-container-highest p-lg lg:p-xl rounded-2xl flex flex-col md:flex-row items-center justify-between gap-lg">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg text-primary">¿Listo para brindarle lo mejor?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-sm">Agende una cita hoy y descubra por qué somos la clínica preferida por miles de familias.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-md">
+  <button id="openModalBtn" class="bg-secondary text-on-secondary px-lg py-sm rounded-lg font-headline-md hover:opacity-90 transition-opacity">Reservar Cita</button>
+</div>
+</div>
+</div>
+</section>
+<div class="modal" id="appointmentModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); justify-content: center; align-items: center; z-index: 9999;">
+        <div style="background-color: white; padding: 30px; border-radius: 12px; width: 90%; max-width: 420px; position: relative; color: #333; font-family: sans-serif;">
+            <span class="close-modal" id="closeModalBtn" style="position: absolute; top: 15px; right: 20px; font-size: 26px; cursor: pointer; color: #999;">&times;</span>
+            <h3 style="margin-top: 0; color: #2d5a43; font-size: 20px; font-weight: bold; margin-bottom: 20px;">Solicita tu Cita de Forma Rápida</h3>
+            
+            <form id="appointmentForm">
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; margin-bottom: 5px; font-weight: 600; font-size: 14px;">Nombre completo:</label>
+                    <input type="text" id="nombre" required placeholder="Ej. Juan Pérez" style="width: 100%; padding: 10px; border: 1px solid #e0e0e0; border-radius: 6px;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; margin-bottom: 5px; font-weight: 600; font-size: 14px;">Teléfono:</label>
+                    <input type="tel" id="telefono" required placeholder="Ej. +56 9 1234 5678" style="width: 100%; padding: 10px; border: 1px solid #e0e0e0; border-radius: 6px;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; margin-bottom: 5px; font-weight: 600; font-size: 14px;">Nombre de la mascota y especie:</label>
+                    <input type="text" id="mascota" required placeholder="Ej. Toby (Perro)" style="width: 100%; padding: 10px; border: 1px solid #e0e0e0; border-radius: 6px;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 5px; font-weight: 600; font-size: 14px;">Motivo:</label>
+                    <select id="motivo" required style="width: 100%; padding: 10px; border: 1px solid #e0e0e0; border-radius: 6px;">
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option value="general">Consulta general</option>
+                        <option value="vacuna">Vacunación o Preventiva</option>
+                    </select>
+                </div>
+                <button type="submit" style="width: 100%; background-color: #2d5a43; color: white; border: none; padding: 12px; font-size: 16px; border-radius: 6px; cursor: pointer; font-weight: bold;">Enviar Solicitud</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="faqsSection" style="display: none; background-color: white; padding: 20px; border-radius: 8px; max-width: 600px; margin: 20px auto; color: #333; font-family: sans-serif;">
+        <h3 style="color: #2d5a43;">Preguntas Frecuentes</h3>
+        <p><strong>¿Es obligatorio agendar cita?</strong><br>Para consultas generales sí, pero atendemos urgencias directo.</p>
+        <p><strong>¿Métodos de pago?</strong><br>Efectivo, tarjetas y transferencias.</p>
+    </div>
+
+    <script src="reserva.js"></script>
+    
+    <div id="faqsSection" style="display: none;" class="w-full max-w-2xl mx-auto mt-8 p-6 bg-white rounded-xl shadow-md text-slate-800 font-sans">
+        <h3 class="text-xl font-bold text-[#2d5a43] border-b-2 border-slate-100 pb-3 mb-4">Preguntas Frecuentes</h3>
+        
+        <div class="border-b border-slate-200 py-3">
+            <p class="font-semibold text-base text-slate-900">¿Es obligatorio agendar una cita para ir a la clínica?</p>
+            <p class="text-sm text-slate-600 mt-1">Para consultas generales y especialidades, sí, así evitamos tiempos de espera. Sin embargo, si se trata de una urgencia, puedes acudir directamente sin cita previa.</p>
+        </div>
+
+        <div class="border-b border-slate-200 py-3">
+            <p class="font-semibold text-base text-slate-900">¿Con cuánta anticipación debo programar la cita?</p>
+            <p class="text-sm text-slate-600 mt-1">Recomendamos agendarla con al menos 24 a 48 horas de anticipación para asegurar el horario que mejor te convenga.</p>
+        </div>
+
+        <div class="border-b border-slate-200 py-3">
+            <p class="font-semibold text-base text-slate-900">¿Qué debo llevar a la primera consulta?</p>
+            <p class="text-sm text-slate-600 mt-1">Si es la primera vez que nos visitas, por favor trae la cartilla de vacunación anterior de tu mascota y cualquier estudio médico previo.</p>
+        </div>
+    </div>
+<!-- Footer -->
+<footer class="w-full mt-lg bg-surface-container-highest dark:bg-surface-container-lowest">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-md lg:px-xl py-lg max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-md text-headline-md font-bold text-on-surface dark:text-on-surface-variant mb-md">
+                    VetControl
+                </div>
+<p class="font-body-md text-body-md text-on-surface-variant">Líderes en tecnología aplicada al bienestar animal.</p>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-md lg:px-xl py-md border-t border-outline-variant">
+<p class="font-body-md text-body-md text-on-surface-variant text-center md:text-left">
+                © 2026 VetControl. Professional Veterinary Care Management.
+            </p>
+</div>
+</footer>
+<script>
+        // Simple parallax effect for hero image
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroImage = document.querySelector('header img');
+            if(heroImage) {
+                heroImage.style.transform = `translateY(${scrolled * 0.1}px)`;
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.bento-grid > div, .group').forEach(el => {
+            el.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
+            observer.observe(el);
+        });
+  document.addEventListener("DOMContentLoaded", () => {
+    const botonReservar = document.getElementById("openModalBtn");
+    const ventanaModal = document.getElementById("appointmentModal");
+    const botonCerrar = document.getElementById("closeModalBtn");
+
+    if (botonReservar && ventanaModal) {
+      botonReservar.addEventListener("click", (e) => {
+        e.preventDefault();
+        ventanaModal.style.display = "flex"; // Esto hace que el formulario aparezca
+      });
+    }
+
+    if (botonCerrar && ventanaModal) {
+      botonCerrar.addEventListener("click", () => {
+        ventanaModal.style.display = "none"; // Esto esconde el formulario con la X
+      });
+    }
+  });
+</script>
+</body>
+</html>

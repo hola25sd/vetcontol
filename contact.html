@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contacto | VetControl</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#70ff82",
+                    "on-surface-variant": "#424752",
+                    "on-secondary": "#ffffff",
+                    "on-surface": "#111c2c",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#dee8ff",
+                    "background": "#f9f9ff",
+                    "secondary": "#006e24",
+                    "inverse-surface": "#263142",
+                    "primary-fixed-dim": "#a9c7ff",
+                    "on-primary": "#ffffff",
+                    "outline": "#727783",
+                    "surface-variant": "#d8e3fa",
+                    "on-tertiary-fixed": "#131e17",
+                    "on-tertiary": "#ffffff",
+                    "secondary-fixed": "#70ff82",
+                    "surface-container-lowest": "#ffffff",
+                    "outline-variant": "#c2c6d4",
+                    "on-tertiary-fixed-variant": "#3e4a41",
+                    "tertiary-fixed": "#d9e6da",
+                    "on-tertiary-container": "#d0ddd1",
+                    "on-secondary-fixed": "#002106",
+                    "on-background": "#111c2c",
+                    "surface-dim": "#cfdaf1",
+                    "on-secondary-container": "#007527",
+                    "tertiary-container": "#566259",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#a9c7ff",
+                    "surface-container": "#e7eeff",
+                    "tertiary": "#3f4a42",
+                    "tertiary-fixed-dim": "#bdcabe",
+                    "inverse-on-surface": "#ebf1ff",
+                    "primary": "#00478d",
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#d6e3ff",
+                    "surface-tint": "#005db6",
+                    "surface-container-highest": "#d8e3fa",
+                    "surface": "#f9f9ff",
+                    "secondary-fixed-dim": "#51e169",
+                    "surface-container-low": "#f0f3ff",
+                    "on-secondary-fixed-variant": "#005319",
+                    "on-primary-container": "#c8daff",
+                    "on-primary-fixed": "#001b3d",
+                    "surface-bright": "#f9f9ff",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#00468c",
+                    "primary-container": "#005eb8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "48px",
+                    "sm": "12px",
+                    "container-max": "1280px",
+                    "xl": "80px",
+                    "md": "24px",
+                    "base": "8px",
+                    "xs": "4px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-xl": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.25", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky z-50 bg-surface border-b border-outline-variant">
+<nav class="flex justify-between items-center h-20 px-md lg:px-xl max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary">VetControl</div>
+<div class="hidden md:flex gap-md items-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="../inicio_gatitos_vetcontrol/code.html">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="../nosotros_gatitos_vetcontrol/code.html">About Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="../servicios_gatitos_vetcontrol/code.html">Services</a>
+<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1" href="../contacto_gatitos_vetcontrol/code.html">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-md py-sm rounded-xl font-bold active:scale-95 transition-transform hover:bg-primary-container">
+                Login
+            </button>
+</nav>
+</header>
+<main class="min-h-screen">
+<!-- Hero Section -->
+<section class="relative py-xl bg-surface-container-low overflow-hidden">
+<div class="max-w-container-max mx-auto px-md lg:px-xl flex flex-col md:flex-row items-center gap-xl relative z-10">
+<div class="flex-1 space-y-md">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-sm py-xs rounded-full text-label-sm uppercase tracking-wider">Contacta con nosotros</span>
+<h1 class="font-headline-xl text-headline-xl text-on-surface">Estamos aquí para cuidar de tu mejor amigo.</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl">
+                        Nuestro equipo de profesionales veterinarios está listo para atender tus dudas, programar citas y brindarte la mejor atención clínica personalizada.
+                    </p>
+</div>
+<div class="flex-1 w-full relative">
+<div class="rounded-xl overflow-hidden aspect-video shadow-lg">
+<img alt="Close-up photo of a small fluffy kitten looking curiously at the camera" class="w-full h-full object-cover" data-alt="A clean and modern veterinary clinic reception area with soft lighting. A friendly female veterinarian in a white coat is smiling warmly at the camera. The background features high-end clinical equipment and a calming Sea Blue and Sage Green color palette, conveying trust, efficiency, and professional care." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC136jsYG0iVWvVFEdOtcGPWS42uBHsTCG478SxMjyg1pxg4nGsPDHjtCkrkgCiZUuD1QJVDNaGnjkHqaicpL4z1ZKF2z8PGzG_YisAx64G56pnqhS97PldV5H8ka73GdF0lhjfscWeLTNnAukTsGU41B-LQeyMzPu-0umNvwAgVXXWIWqJYOjYrWC_gK3qc3cDsaHyWRvbm4Lg0maEqg3yksi4LSpODGBZpuUzjGq5LZx7hL-mEu13NqR0O6c9I1fy6_iCr_-jomU"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content (Bento Grid) -->
+<section class="py-xl max-w-container-max mx-auto px-md lg:px-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Contact Form Card -->
+<div class="lg:col-span-7 bg-surface-container-lowest border border-outline-variant p-md lg:p-xl rounded-xl shadow-sm">
+<h2 class="font-headline-lg text-headline-lg mb-md text-on-surface">Envíanos un mensaje</h2>
+<form class="space-y-md" id="contactForm">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="space-y-xs">
+<label class="text-label-md font-label-md text-on-surface-variant">Nombre completo</label>
+<input class="w-full bg-surface border border-outline-variant rounded-lg p-sm focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="Ej. Juan Pérez" type="text"/>
+</div>
+<div class="space-y-xs">
+<label class="text-label-md font-label-md text-on-surface-variant">Correo electrónico</label>
+<input class="w-full bg-surface border border-outline-variant rounded-lg p-sm focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="juan@ejemplo.com" type="email"/>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="text-label-md font-label-md text-on-surface-variant">Asunto</label>
+<input class="w-full bg-surface border border-outline-variant rounded-lg p-sm focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="¿En qué podemos ayudarte?" type="text"/>
+</div>
+<div class="space-y-xs">
+<label class="text-label-md font-label-md text-on-surface-variant">Mensaje</label>
+<textarea class="w-full bg-surface border border-outline-variant rounded-lg p-sm focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="Escribe tu consulta detalladamente..." rows="5"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-md rounded-xl font-bold hover:bg-primary-container transition-all active:scale-[0.98] flex justify-center items-center gap-sm" type="submit">
+<span class="material-symbols-outlined">send</span>
+                            Enviar Mensaje
+                        </button>
+</form>
+</div>
+<!-- Info Stack -->
+<div class="lg:col-span-5 space-y-gutter">
+<!-- Info Card -->
+<div class="bg-surface-container-high p-md rounded-xl space-y-md border border-outline-variant">
+<div class="flex items-start gap-md">
+<div class="bg-secondary-container p-sm rounded-lg text-on-secondary-container">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Dirección</h3>
+<p class="text-on-surface-variant">Av. General Caballero y la calle Coronel Oviedo, Villarrica.</p>
+</div>
+</div>
+<div class="flex items-start gap-md">
+<div class="bg-secondary-container p-sm rounded-lg text-on-secondary-container">
+<span class="material-symbols-outlined">call</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Teléfono</h3>
+<p class="text-on-surface-variant">+595 0991 556434</p>
+<p class="text-label-md font-label-md text-secondary">Atención 24h para emergencias</p>
+</div>
+</div>
+<div class="flex items-start gap-md">
+<div class="bg-secondary-container p-sm rounded-lg text-on-secondary-container">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Email</h3>
+<p class="text-on-surface-variant">contacto@vetcontrol.pro</p>
+</div>
+</div>
+</div>
+<!-- Hours Card -->
+<div class="bg-tertiary-fixed p-md rounded-xl border border-outline-variant">
+<h3 class="font-headline-md text-headline-md text-on-tertiary-fixed mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined">schedule</span>
+                            Horario de Atención
+                        </h3>
+<div class="space-y-sm">
+<div class="flex justify-between border-b border-on-tertiary-fixed-variant/20 pb-xs">
+<span class="font-label-md text-on-tertiary-fixed-variant">Lunes - Viernes</span>
+<span class="font-bold text-on-tertiary-fixed">07:30 - 22:30</span>
+</div>
+<div class="flex justify-between border-b border-on-tertiary-fixed-variant/20 pb-xs">
+<span class="font-label-md text-on-tertiary-fixed-variant">Sábados</span>
+<span class="font-bold text-on-tertiary-fixed">09:00 - 20:00</span>
+</div>
+<div class="flex justify-between">
+<span class="font-label-md text-on-tertiary-fixed-variant">Domingos</span>
+<span class="bg-on-tertiary-fixed-variant text-on-tertiary-fixed rounded px-xs py-0.5 text-[10px] uppercase">Solo urgencias</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Map Section -->
+<section class="w-full h-[450px] relative mt-xl">
+<div class="absolute inset-0 bg-surface-dim">
+<img alt="Close-up photo of a small fluffy kitten looking curiously at the camera" class="w-full h-full object-cover grayscale opacity-60" data-alt="A clean, minimalist street map visual showing a specific location pinned. The map uses a stylized, professional aesthetic with a soft grayscale base and Sea Blue highlights for landmarks. The lighting is neutral and clear, emphasizing modern urban planning and easy navigation in a metropolitan area like Madrid." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC136jsYG0iVWvVFEdOtcGPWS42uBHsTCG478SxMjyg1pxg4nGsPDHjtCkrkgCiZUuD1QJVDNaGnjkHqaicpL4z1ZKF2z8PGzG_YisAx64G56pnqhS97PldV5H8ka73GdF0lhjfscWeLTNnAukTsGU41B-LQeyMzPu-0umNvwAgVXXWIWqJYOjYrWC_gK3qc3cDsaHyWRvbm4Lg0maEqg3yksi4LSpODGBZpuUzjGq5LZx7hL-mEu13NqR0O6c9I1fy6_iCr_-jomU"/>
+<div class="hidden" data-location="Madrid, Spain" style=""></div>
+<!-- Glass Overlay for Map Info -->
+<div class="absolute bottom-md left-md lg:left-xl p-md glass-card rounded-xl border border-white/50 max-w-xs shadow-xl">
+<h4 class="font-bold text-primary mb-xs">Visítanos en nuestra sede</h4>
+<p class="text-label-md text-on-surface">Parking gratuito para clientes durante la consulta.</p>
+<a href="https://maps.app.goo.gl/U7Toz4Lp6eAjkY77A?g_st=aw" target="_blank" class="mt-sm text-primary font-bold flex items-center gap-xs text-label-md hover:underline decoration-2">
+    Abrir en Google Maps
+    <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-lg bg-surface-container-highest">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-md lg:px-xl py-lg max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-md text-headline-md font-bold text-on-surface mb-sm">VetControl</div>
+<p class="text-on-surface-variant text-body-md">Gestión veterinaria profesional con un enfoque humano y tecnológico.</p>
+</div>
+<div class="col-span-1">
+<h4 class="font-bold text-on-surface mb-sm">Empresa</h4>
+<div class="flex flex-col gap-xs">
+<a class="text-on-surface-variant hover:text-primary transition-opacity" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-opacity" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+<div class="col-span-1">
+<h4 class="font-bold text-on-surface mb-sm">Newsletter</h4>
+<div class="flex gap-xs">
+<input class="w-full bg-surface border border-outline-variant rounded-lg p-sm text-sm" placeholder="Email" type="email"/>
+<button class="bg-primary text-on-primary p-sm rounded-lg hover:opacity-80">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-md lg:px-xl py-md border-t border-outline-variant text-center md:text-left">
+<p class="text-on-surface-variant font-body-md">© 2026 VetControl. Professional Veterinary Care Management.</p>
+</div>
+</footer>
+<script>
+        // Simple form interaction
+        document.getElementById('contactForm')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalContent = btn.innerHTML;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> Enviando...';
+            btn.classList.add('opacity-70', 'pointer-events-none');
+            
+            setTimeout(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined">check_circle</span> ¡Enviado!';
+                btn.classList.remove('bg-primary');
+                btn.classList.add('bg-secondary');
+                e.target.reset();
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalContent;
+                    btn.classList.remove('bg-secondary', 'opacity-70', 'pointer-events-none');
+                    btn.classList.add('bg-primary');
+                }, 3000);
+            }, 1500);
+        });
+
+        // Hover effect for info cards
+        const infoCards = document.querySelectorAll('.bg-surface-container-high, .bg-tertiary-fixed');
+        infoCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-4px)';
+                card.style.transition = 'transform 0.3s ease';
+                card.style.boxShadow = '0 10px 25px -5px rgba(0, 0, 0, 0.05)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = 'none';
+            });
+        });
+    </script>
+</body></html>
